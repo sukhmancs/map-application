@@ -1,0 +1,65 @@
+<!-- StAuth10244: I Sukhmanjeet Singh, 000838215 certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explore Our Country</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>        
+        .transform-glow:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #007bff;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url('images/background.png');
+        }       
+        @keyframes example {
+            0% {color: black;}
+            50% {color: blue;}
+            100% {color: black;}
+        }
+
+        .animated-text {
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container mt-4 pt-3 pt-md-0">
+        <h1 class="text-center mb-4">Discover the Best Attractions</h1>
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-6 mb-4">
+                <div id="map" style="height: 700px; width: 100%; border-radius: 5px; border: 1px solid #ced4da;"></div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-6">
+                <input id="address" type="text" class="form-control mb-2" style="width: 100%;" placeholder="Enter an address">
+                <select id="destination" class="form-control mb-2" style="width: 100%;">
+                    <!-- Options will be added dynamically -->
+                </select>
+                <ul style="list-style-type:none;">
+                    <li><i class="fas fa-search-location animated-text"></i> Locate the input field labeled 'Enter an address'.</li>
+                    <li><i class="fas fa-keyboard animated-text"></i> Type your desired address into this field.</li>
+                    <li><i class="fas fa-caret-down animated-text"></i> Below the input field, find the dropdown menu.</li>
+                    <li><i class="fas fa-hand-pointer animated-text"></i> Select your destination from the options in the dropdown menu.</li>
+                    <li><i class="fas fa-map-marker-alt animated-text"></i> The map will update based on your input and selection.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center flex-column flex-md-row">
+            <button id="filter1" class="btn btn-primary transform-glow mx-2 my-2 my-md-0">Filter Museum</button>
+            <button id="filter2" class="btn btn-primary transform-glow mx-2 my-2 my-md-0">Filter Falls</button>
+            <button id="geolocation" class="btn btn-success transform-glow mx-2 my-2 my-md-0">Use my location</button>
+            <button id="get-directions" class="btn btn-info transform-glow mx-2 my-2 my-md-0">Get directions</button>    
+            <button id="reset" class="btn btn-danger transform-glow mx-2 my-3 my-md-0">Reset</button>
+        </div>        
+    </div>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXoThGtQUYyadw9b3QkbTfqLCSzaEYXEs&libraries=places&callback=initMap"></script>
+    <script src="app.js"></script>
+</body>
+</html>
