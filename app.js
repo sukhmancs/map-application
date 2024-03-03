@@ -321,3 +321,22 @@ document.getElementById('reset').addEventListener('click', function() {
     map.setZoom(DEFAULT_ZOOM);
     map.setCenter(DEFAULT_CENTER);
 });
+
+// Disable right click on the game board
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, and Ctrl+U
+document.onkeydown = function(e) {
+    if(e.code === "F12") {
+      return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.code === 'KeyI'){
+      return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.code === 'KeyJ'){
+      return false;
+    }
+    if(e.ctrlKey && e.code === 'KeyU'){
+      return false;
+    }
+}
